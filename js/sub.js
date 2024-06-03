@@ -113,7 +113,7 @@ let gID = "";
 // 카테고리 선택
 for (let i = 0; i < filC.length; i++) {
   filC[i].addEventListener("click", (e) => {
-    getmovie(e);
+    getmovie(e); //선택시 영화목록 갱신
 
     for (j of filC) {
       j.classList.remove("on");
@@ -190,7 +190,10 @@ const getmovie = async (e) => {
 
   document.querySelector("#liston").innerHTML = show;
 
-  getgenres();
+  getgenres(); //장르 목록 출력
+
+  // 찜하기 버튼 이벤트 리스너 추가
+  addWishlistEventListeners();
 };
 
 getmovie();
@@ -305,14 +308,25 @@ const searchG = async (g) => {
             ].vote_average.toFixed(1)}점</h4>
             <img src="https://image.tmdb.org/t/p/w500${
               gListon1[i].poster_path
-            }" />
+            } " alt="${gListon1[i].title} 포스터" />
           </div>
           <div>
-            <p><i class="fa-regular fa-heart"></i> 찜하기</p>
-            <p class="detail-btn"  data-id="${gListon1[i].id}">상세보기</p>
+          <button class="wishlist-button" data-movie-id="${
+            gListon1[i].id
+          }" data-title="${gListon1[i].title}" data-overview="${
+      gListon1[i].overview
+    }" data-poster="https://image.tmdb.org/t/p/w500${
+      gListon1[i].poster_path
+    }"><i class="fa-regular fa-heart"></i> 찜하기</button>
+            <p><a href="#" class="detail-btn" data-id="${
+              gListon1[i].id
+            }">상세보기</a></p>
           </div>
         </li>`;
   }
 
   document.querySelector("#liston").innerHTML = mgshow;
+
+  // 모든 영화 목록이 생성된 후에 찜하기 버튼 이벤트 리스너 추가
+  addWishlistEventListeners();
 };
