@@ -1,0 +1,283 @@
+@charset "utf-8";
+
+#searchButton {
+  border: none;
+  font-size: 20px;
+  background-color: #fff;
+  color: var(--point-color-orange);
+}
+
+/* container */
+#container {
+  background-color: #222;
+  width: 100%;
+  min-height: calc(100vh - 114px);
+  transition: width 0.5s;
+  position: relative;
+}
+
+#container.filon {
+  width: 85%;
+  transition: width 0.5s;
+}
+
+#container #subtitle {
+  display: inline;
+  font-size: 30px;
+  color: var(--text-color-white);
+  padding-left: 11%;
+}
+
+#container.filon #subtitle {
+  font-size: 30px;
+  color: var(--text-color-white);
+  padding-left: 6%;
+}
+
+#container .gtitle {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: normal;
+  color: #fff;
+}
+
+#container .gtitle i {
+  margin-right: 15px;
+}
+
+#container ul {
+  margin: 0px auto;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4%;
+}
+
+#container.filon ul {
+  width: 90%;
+}
+
+#container ul li {
+  width: calc(88% / 4);
+  margin: 15px 0 35px;
+}
+
+#container ul li img {
+  width: 100%;
+  height: 25vw;
+  object-fit: cover;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px #fff;
+}
+
+#container ul li .posterhover {
+  width: 100%;
+  position: relative;
+}
+
+#container ul li .posterhover:hover img {
+  filter: brightness(0.6);
+  box-shadow: 0px 0px 15px var(--point-color-orange);
+}
+
+#container ul li .posterhover:hover .posttitle {
+  opacity: 1;
+}
+
+#container ul li .posterhover:hover .postp {
+  opacity: 1;
+}
+
+#container ul li .posterhover:hover .postrate {
+  opacity: 1;
+}
+
+#container .posttitle {
+  width: 90%;
+  font-size: 28px;
+  color: white;
+  text-shadow: 1px 1px 2px #000;
+  text-align: center;
+  word-break: keep-all;
+  position: absolute;
+  top: 15%;
+  opacity: 0;
+  z-index: 9;
+}
+
+#container ul .postp {
+  width: 85%;
+  height: 42%;
+  position: absolute;
+  top: 53%;
+  background-color: transparent;
+  font-weight: bold;
+  text-align: left;
+  color: white;
+  text-shadow: 0px 0px 1px #000;
+  /* word-break: keep-all; */
+  transform: translate(0, -50%);
+  opacity: 0;
+  z-index: 9;
+  overflow: hidden;
+  text-align: justify;
+  font-size: 16px;
+}
+
+#container ul li .postrate {
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  right: 15%;
+  bottom: 15%;
+  opacity: 0;
+  z-index: 9;
+}
+
+#container ul li .fa-star {
+  color: var(--point-color-orange);
+}
+
+#container ul li div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 5%;
+}
+
+#container ul li div p {
+  width: 40%;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#container ul li div .fa-heart {
+  /* color: #e40000; */
+  color: var(--point-color-orange);
+}
+
+/* filter open */
+.filopen {
+  width: 100px;
+  filter: brightness(100%);
+  position: fixed;
+  top: 150px;
+  right: 2%;
+  z-index: 10;
+  animation: move 1s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    rotate: -10deg;
+  }
+  25% {
+    rotate: 10deg;
+  }
+  50% {
+    rotate: -10deg;
+  }
+  75% {
+    rotate: 10deg;
+  }
+  100% {
+    rotate: -10deg;
+  }
+}
+
+.filopen.scDown {
+  top: 40px;
+  transition: top 0.5s;
+}
+
+/* filter */
+#filter {
+  padding: 20px 30px;
+  box-sizing: border-box;
+  width: 15%;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  top: 114px;
+  right: -16%;
+  z-index: 15;
+  transition: right 0.5s;
+}
+
+#filter.on {
+  right: 0;
+}
+
+#filter.scDown {
+  position: fixed;
+  top: 0px;
+}
+
+#filter img {
+  margin: 10px auto 30px;
+  width: 65%;
+}
+
+#filter h3 {
+  padding: 0 10px;
+  font-size: 25px;
+  letter-spacing: 1px;
+  line-height: 50px;
+  color: var(--point-color-orange);
+  border-bottom: 2px solid var(--point-color-orange);
+}
+
+#filter ul {
+  margin: 20px 0;
+  font-size: 20px;
+  line-height: 50px;
+}
+
+#filter ul li {
+  padding: 0px 20px;
+  cursor: pointer;
+}
+
+#filter .filC li.on {
+  background-color: #ffae005c;
+  border-radius: 25px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 3px orange;
+}
+
+#filter .filG {
+  height: 23%;
+  overflow-y: scroll;
+}
+
+#filter .filG li.on {
+  background-color: #ffae005c;
+  border-radius: 25px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0px 0px 5px orange;
+}
+
+#filter.scDown .filG {
+  height: 34%;
+}
+
+#filter .filG::-webkit-scrollbar {
+  display: none;
+}
+
+#filter .fa-right-from-bracket {
+  margin-top: 10px;
+  font-size: 35px;
+  color: var(--point-color-orange);
+}

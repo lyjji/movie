@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/subsytle.css" />
+
+    <!-- i -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- 폰트 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- header index와 같음 -->
+    <header>
+      <h1>
+        <a href="index.html"
+          ><img class=font-family: "Noto Sans KR", sans-serif;"logo"
+          src="img/logo.png" />Heoigo</a
+        >
+      </h1>
+
+      <ul class="hmenu">
+        <li class="on">
+          <a href="sub.html?value=popular" id="subpop">인기순</a>
+        </li>
+        <li><a href="sub.html?value=top_rated" id="subtop">평점순</a></li>
+        <li><a href="sub.html?value=upcoming" id="subup">개봉예정</a></li>
+        <li>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="영화를 검색하세요!"
+          />
+          <button id="searchButton">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </li>
+        <li>
+          <a href="#" id="wishlistButton"><i class="fa-solid fa-user"></i></a>
+        </li>
+      </ul>
+    </header>
+
+    <!-- container -->
+    <section id="container" class="pTop pBt filon">
+      <!-- 카테고리/장르 제목 -->
+      <h2 id="subtitle">인기순</h2>
+      <span class="gtitle"></span>
+      <!-- 필터 오픈 버튼 -->
+      <img class="filopen" src="img/popcon_shafff.png" alt="" />
+      <ul id="liston"></ul>
+    </section>
+
+    <!-- 카테고리/장르 필터 -->
+    <div id="filter" class="on">
+      <img src="img/popcon_pc.png" alt="" />
+
+      <h3><i class="fa-regular fa-folder-open"></i> 카테고리</h3>
+      <ul class="filC">
+        <li id="popular" class="on">인기순</li>
+        <li id="top_rated">평점순</li>
+        <li id="upcoming">개봉예정</li>
+      </ul>
+
+      <h3><i class="fa-solid fa-ticket"></i> 장르별</h3>
+      <ul class="filG"></ul>
+      <i class="fa-solid fa-right-from-bracket filOff"></i>
+    </div>
+
+    <!-- 모달 박스 -->
+    <div id="movieModal" class="modal">
+      <!-- 아이디를 "movieModal"로 변경 -->
+      <div class="modal-content">
+        <span id="mclose">&times;</span>
+        <ul>
+          <li class="mLeft">
+            <img id="modal-img" src="" alt="movie poster" />
+          </li>
+          <li class="mRight">
+            <h2 id="modal-title">영화 제목</h2>
+            <ul class="date">
+              <li>
+                <p id="modal-release-date">개봉일: <span></span></p>
+              </li>
+              <li>
+                <p id="modal-rating">
+                  <i class="fa-solid fa-star"></i> <span id="modal-rate"></span>
+                </p>
+              </li>
+            </ul>
+            <ul class="info">
+              <li>
+                <p id="modal-genre"><span></span></p>
+              </li>
+              <li>
+                <p id="modal-runtime"><span></span></p>
+              </li>
+            </ul>
+            <p id="modal-overview">영화 소개</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- js -->
+    <script src="js/sub.js"></script>
+    <script src="js/likelist.js"></script>
+    <script src="js/detaile.js"></script>
+    <script src="js/search.js"></script>
+  </body>
+</html>

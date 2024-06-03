@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heoigo</title>
+    <link rel="website icon" type="png" href="img/logo.png" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- 폰트 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <h1>
+        <a href="index.html"
+          ><img class="logo" src="img/logo.png" alt="logo" />Heoigo</a
+        >
+      </h1>
+      <ul>
+        <li><a href="sub.html?value=popular">인기순</a></li>
+        <li><a href="sub.html?value=top_rated">평점순</a></li>
+        <li><a href="sub.html?value=upcoming">개봉예정</a></li>
+        <li>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="영화를 검색하세요!"
+          />
+          <button id="searchButton">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </li>
+        <li>
+          <a href="#" id="wishlistButton"><i class="fa-solid fa-user"></i></a>
+        </li>
+      </ul>
+    </header>
+
+    <!-- visual -->
+    <div id="visual">
+      <div class="video">
+        <iframe
+          width="1442"
+          height="810"
+          src="https://www.youtube.com/embed/MYjnA8vnEMk?autoplay=1&mute=1&controls=0&loop=1&playlist=MYjnA8vnEMk,b0yAOYIvP1Y,KsGn_DoYZfU"
+          title="[가필드: 우유 원정대] 런칭 예고편"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- container start -->
+    <ul id="container">
+      <!-- popular -->
+      <li id="popular" class="pTop">
+        <h2>
+          인기순<span><a href="sub.html?value=popular">더보기 ></a></span>
+        </h2>
+
+        <ul>
+          <li>
+            <div class="posterhover">
+              <h3 class="posttitle">movie title</h3>
+              <p class="postp">영화 줄거리~</p>
+              <h4 class="postrate"><i class="fa-solid fa-star"></i> n.n점</h4>
+              <img src="img/가필드.jpg" alt="movie poster" />
+            </div>
+            <div>
+              <button
+                class="wishlist-button"
+                data-movie-id="1"
+                data-title="영화 제목"
+                data-overview="영화 줄거리"
+                data-poster="img/가필드.jpg"
+              >
+                <i class="fa-regular fa-heart"></i> 찜하기
+              </button>
+
+              <p>상세보기</p>
+            </div>
+          </li>
+          <!-- 반복될 영화 리스트 -->
+        </ul>
+      </li>
+
+      <!-- best -->
+      <li id="best" class="ptop">
+        <h2>
+          평점순<span><a href="sub.html?value=top_rated">더보기 ></a></span>
+        </h2>
+        <ul>
+          <li>
+            <div class="posterhover">
+              <h3 class="posttitle">movie title</h3>
+              <p class="postp">영화 줄거리~</p>
+              <h4 class="postrate"><i class="fa-solid fa-star"></i> n.n점</h4>
+              <img src="img/가필드.jpg" alt="movie poster" />
+            </div>
+            <div>
+              <button
+                class="heart"
+                data-movie-id="영화 ids"
+                data-title="영화 제목"
+                data-overview="영화 줄거리"
+                data-poster="영화 포스트"
+              >
+                <i class="fa-regular fa-heart"></i> 찜하기
+              </button>
+
+              <p>상세보기</p>
+            </div>
+          </li>
+        </ul>
+      </li>
+
+      <!-- new -->
+      <li id="new" class="ptop pBt">
+        <h2>
+          개봉예정<span><a href="sub.html?value=upcoming">더보기 ></a></span>
+        </h2>
+        <ul>
+          <li>
+            <div class="posterhover">
+              <h3 class="posttitle">movie title</h3>
+              <p class="postp">영화 줄거리~</p>
+              <h4 class="postrate"><i class="fa-solid fa-star"></i> n.n점</h4>
+              <img src="img/가필드.jpg" alt="movie poster" />
+            </div>
+            <div>
+              <button
+                class="wishlist-button"
+                data-movie-id="1"
+                data-title="영화 제목"
+                data-overview="영화 줄거리"
+                data-poster="img/가필드.jpg"
+              >
+                <i class="fa-regular fa-heart"></i> 찜하기
+              </button>
+
+              <p>상세보기</p>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- 위시리스트 -->
+    <div id="wishlistModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>찜 목록</h2>
+        <ul id="wishlist">
+          <li><img id="likelist-img" src="" alt="movie poster" /></li>
+        </ul>
+        <!-- 여기에 찜 목록이 표시됩니다. -->
+      </div>
+    </div>
+
+    <!-- 모달 박스 -->
+    <div id="movieModal" class="modal">
+      <!-- 아이디를 "movieModal"로 변경 -->
+      <div class="modal-content">
+        <span id="mclose">&times;</span>
+        <ul>
+          <li class="mLeft">
+            <img id="modal-img" src="" alt="movie poster" />
+          </li>
+          <li class="mRight">
+            <h2 id="modal-title">영화 제목</h2>
+            <ul class="date">
+              <li>
+                <p id="modal-release-date">개봉일: <span></span></p>
+              </li>
+              <li>
+                <p id="modal-rating">
+                  <i class="fa-solid fa-star"></i> <span id="modal-rate"></span>
+                </p>
+              </li>
+            </ul>
+            <ul class="info">
+              <li>
+                <p id="modal-genre"><span></span></p>
+              </li>
+              <li>
+                <p id="modal-runtime"><span></span></p>
+              </li>
+            </ul>
+            <p id="modal-overview">영화 소개</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- JavaScript 코드 -->
+
+    <script src="js/custom.js"></script>
+    <script src="js/likelist.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/detaile.js"></script>
+  </body>
+</html>

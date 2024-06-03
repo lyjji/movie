@@ -1,0 +1,227 @@
+@charset "utf-8";
+
+/* 사용자 정의 CSS 변수 정의 */
+:root {
+  --point-color-orange: #ff9900;
+  /* 다른 변수 정의 */
+}
+
+/* ===== header ===== */
+header {
+  padding: 15px 20px 15px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 > a {
+  display: flex;
+  font-family: "Irish Grover", system-ui;
+  font-size: 50px;
+  align-items: center;
+  gap: 15px;
+}
+
+header h1 img {
+  width: 80px;
+}
+
+header ul {
+  display: flex;
+  gap: 20px; /* gap 속성 활성화 */
+  align-items: center;
+  font-weight: bold;
+}
+
+header ul li {
+  padding: 0px 20px;
+  font-size: 20px;
+}
+
+header ul li:hover {
+  color: var(--point-color-orange);
+}
+
+header ul li:nth-child(2) {
+  border-left: 2px solid #333;
+  border-right: 2px solid #333;
+}
+
+header ul li:nth-child(4) {
+  border: 2px solid var(--point-color-orange);
+  border-radius: 50px;
+  color: var(--point-color-orange);
+  padding: 10px 15px 10px 20px;
+  margin: 0px 20px;
+  align-items: center;
+  display: flex;
+}
+
+header input {
+  width: 220px;
+  border: none;
+  outline: none;
+}
+
+#searchButton {
+  border: none;
+  font-size: 20px;
+  background-color: #fff;
+  color: var(--point-color-orange);
+}
+
+header .fa-user {
+  font-size: 30px !important;
+}
+
+/* ===== visual ===== */
+
+#visual {
+  padding: 70px 0px 50px;
+  width: 100%;
+  height: 90vh;
+  background-image: url(../img/bg%201.jpg); /* URL 내 공백 수정 */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  /* align-items: center; */
+  /* align-items 속성 활성화 */
+}
+
+#visual .video {
+  margin: 0px auto;
+  width: 60vw;
+  height: 60vh;
+}
+
+#visual iframe {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 100px #666;
+}
+
+/* ===== container ===== */
+
+#container {
+  background-color: #222;
+  width: 100%;
+}
+
+#container li {
+  width: 85%;
+  margin: 0px auto;
+}
+
+#container li h2 {
+  font-size: 30px;
+  color: var(--text-color-white);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  align-items: flex-end;
+}
+
+#container li h2 span {
+  font-size: 18px;
+}
+
+#container ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+}
+
+#container ul li {
+  width: calc(100% / 5);
+}
+
+#container li img {
+  width: 100%;
+  height: 23vw;
+  object-fit: cover;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px #fff;
+}
+
+#container ul .posterhover {
+  width: 100%;
+  position: relative;
+}
+
+#container ul .posterhover:hover img {
+  filter: brightness(0.6);
+  box-shadow: 0px 0px 15px var(--point-color-orange);
+}
+
+#container ul .posterhover:hover .posttitle {
+  opacity: 1;
+}
+
+#container ul .posterhover:hover .postp {
+  opacity: 1;
+}
+
+#container ul .posterhover:hover .postrate {
+  opacity: 1;
+}
+
+#container .posttitle {
+  width: 90%;
+  font-size: 28px;
+  color: white;
+  text-shadow: 1px 1px 2px #000;
+  text-align: center;
+  word-break: keep-all;
+  position: absolute;
+  top: 15%;
+  opacity: 0;
+  z-index: 9;
+}
+
+#container ul .postp {
+  width: 85%;
+  height: 40%;
+  position: absolute;
+  top: 55%;
+  background-color: transparent;
+  font-weight: bold;
+  text-align: left;
+  color: white;
+  text-shadow: 0px 0px 1px #000;
+  transform: translate(0, -50%);
+  opacity: 0;
+  z-index: 9;
+  overflow: hidden;
+  text-align: justify;
+  font-size: 16px;
+}
+
+#container ul .postrate {
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  right: 15%;
+  bottom: 15%;
+  opacity: 0;
+  z-index: 9;
+}
+
+#container ul .fa-star {
+  color: var(--point-color-orange);
+}
+
+#container ul li div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 5%;
+}
+
+#container ul li div .fa-heart {
+  /* color: #e40000; */
+  color: var(--point-color-orange);
+}
