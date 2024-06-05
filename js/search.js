@@ -48,6 +48,8 @@ function searchMovies(query) {
       return response.json();
     })
     .then((data) => {
+      console.log(data);
+
       const resultsDiv = document.querySelector("#results");
       resultsDiv.innerHTML = ""; // 기존 결과 제거
 

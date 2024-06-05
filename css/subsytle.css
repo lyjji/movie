@@ -1,14 +1,8 @@
 @charset "utf-8";
 
-#searchButton {
-  border: none;
-  font-size: 20px;
-  background-color: #fff;
-  color: var(--point-color-orange);
-}
-
 /* container */
 #container {
+  padding: 90px 0 50px;
   background-color: #222;
   width: 100%;
   min-height: calc(100vh - 114px);
@@ -22,15 +16,13 @@
 }
 
 #container #subtitle {
-  display: inline;
+  padding-left: 8.5%;
   font-size: 30px;
   color: var(--text-color-white);
-  padding-left: 11%;
+  display: inline;
 }
 
 #container.filon #subtitle {
-  font-size: 30px;
-  color: var(--text-color-white);
   padding-left: 6%;
 }
 
@@ -47,7 +39,7 @@
 
 #container ul {
   margin: 0px auto;
-  width: 80%;
+  width: 85%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -63,10 +55,15 @@
   margin: 15px 0 35px;
 }
 
+#container.filon ul li img {
+  height: 25vw;
+}
+
 #container ul li img {
   width: 100%;
-  height: 25vw;
+  height: 26.5vw;
   object-fit: cover;
+  object-position: center center;
   border: 1px solid #fff;
   border-radius: 20px;
   box-shadow: 0px 0px 5px #fff;
@@ -148,28 +145,17 @@
   gap: 5%;
 }
 
-#container ul li div p {
-  width: 40%;
-  text-align: center;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 8px 15px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
 #container ul li div .fa-heart {
-  /* color: #e40000; */
   color: var(--point-color-orange);
 }
 
 /* filter open */
 .filopen {
-  width: 100px;
+  width: 80px;
   filter: brightness(100%);
   position: fixed;
   top: 150px;
-  right: 2%;
+  right: 1.5%;
   z-index: 10;
   animation: move 1s linear infinite;
 }
@@ -193,8 +179,8 @@
 }
 
 .filopen.scDown {
-  top: 40px;
-  transition: top 0.5s;
+  top: 30px;
+  transition: top 0.3s;
 }
 
 /* filter */
@@ -222,7 +208,7 @@
 
 #filter img {
   margin: 10px auto 30px;
-  width: 65%;
+  height: 15vh;
 }
 
 #filter h3 {
@@ -255,7 +241,7 @@
 }
 
 #filter .filG {
-  height: 23%;
+  height: calc(85vh - 575px);
   overflow-y: scroll;
 }
 
@@ -269,7 +255,7 @@
 }
 
 #filter.scDown .filG {
-  height: 34%;
+  height: calc(85vh - 460px);
 }
 
 #filter .filG::-webkit-scrollbar {
@@ -280,4 +266,29 @@
   margin-top: 10px;
   font-size: 35px;
   color: var(--point-color-orange);
+}
+
+#page {
+  width: 100%;
+  padding-bottom: 50px;
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+}
+
+#page.filon {
+  width: 85%;
+  transition: width 0.5s;
+}
+
+#page li {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#page li.on {
+  text-decoration: underline;
 }

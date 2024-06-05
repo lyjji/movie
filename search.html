@@ -20,14 +20,17 @@
     />
   </head>
   <body>
+    <!-- header -->
     <header>
       <h1>
-        <a href="index.html"><img class="logo" src="img/logo.png" />Heoigo</a>
+        <a href="index.html"
+          ><img class="logo" src="img/logo.png" alt="logo" />Heoigo</a
+        >
       </h1>
       <ul>
-        <li><a href="sub.html">인기순</a></li>
-        <li><a href="sub.html">평점순</a></li>
-        <li><a href="sub.html">개봉예정</a></li>
+        <li><a href="sub.html?value=popular">인기순</a></li>
+        <li><a href="sub.html?value=top_rated">평점순</a></li>
+        <li><a href="sub.html?value=upcoming">개봉예정</a></li>
         <li>
           <input
             type="text"
@@ -39,10 +42,12 @@
           </button>
         </li>
         <li>
-          <a href="#"><i class="fa-solid fa-user"></i></a>
+          <a href="#" id="wishlistButton"><i class="fa-solid fa-user"></i></a>
         </li>
       </ul>
     </header>
+
+    <!-- result -->
     <h3 id="searchTitle">검색결과</h3>
     <div id="results">
       <!-- 영화 검색 결과가 여기에 동적으로 추가됩니다. -->

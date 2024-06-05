@@ -1,4 +1,4 @@
-// 필터
+// 요소 불러오기
 let hmenu = document.querySelectorAll(".hmenu li");
 const filC = document.querySelectorAll(".filC li");
 let subtitle = document.querySelector("#subtitle");
@@ -64,6 +64,7 @@ subtitle.textContent = subname;
 let filop = document.querySelector(".filopen");
 let fil = document.querySelector("#filter");
 let filout = document.querySelector(".filOff");
+let pon = document.querySelector("#page");
 
 let con = document.querySelector("#container");
 
@@ -87,11 +88,13 @@ window.addEventListener("scroll", function () {
 filop.addEventListener("click", () => {
   fil.classList.add("on");
   con.classList.add("filon");
+  pon.classList.add("filon");
 });
 
 filout.addEventListener("click", () => {
   fil.classList.remove("on");
   con.classList.remove("filon");
+  pon.classList.remove("filon");
 });
 
 // api 연결
